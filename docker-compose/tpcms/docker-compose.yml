@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  web:
+    image: hub.c.163.com/xychenli/php5:develop
+    ports:
+       - "5000:80"
+    networks:
+       - my-bridge
+    volumes:
+       - ./tpcms:/var/www
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - my-bridge
+
+volumes:
+  mysql-data:
+
+networks:
+  my-bridge:
+    driver: bridge
