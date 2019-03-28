@@ -7,8 +7,7 @@ RUN yum -y install glibc-static telnet bridge-utils net-tools kde-l10n-Chinese  
 	yum install -y nodejs && \
 	mkdir /var/yapi && cd /var/yapi &&  git clone https://github.com/YMFE/yapi.git vendors
 COPY conf/yapi.json  /var/yapi/config.json
-RUN  cd /var/yapi/vendors && npm install --production --registry https://registry.npm.taobao.org  && \
-	 npm run install-server >> /var/yapi/password.txt
+RUN  cd /var/yapi/vendors && npm install --production --registry https://registry.npm.taobao.org
 COPY conf/init.sh      /var
 
 EXPOSE 22
