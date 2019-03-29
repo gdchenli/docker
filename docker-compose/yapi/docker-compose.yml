@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web: 
-    image: gdchenli/yapi
+    image: gdchenli/yapi:1.0.0
     ports:
          - "8070:80"
     networks:
