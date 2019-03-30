@@ -1,6 +1,6 @@
 FROM hub.c.163.com/public/centos:7.2-tools
 RUN yum -y install glibc-static telnet bridge-utils net-tools kde-l10n-Chinese  glibc-common \
-    gcc gcc-c++ autoconf pcre pcre-devel make automake wget httpd-tools vim  git initscripts \
+    gcc gcc-c++ autoconf pcre pcre-devel make automake wget httpd-tools vim  git initscripts tree \
     zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel \
     gdbm-devel db4-devel libpcap-devel xz-devel nss curl && \
     /bin/echo 'root:123456'|chpasswd && \
