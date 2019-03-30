@@ -7,7 +7,7 @@ RUN yum -y install glibc-static telnet bridge-utils net-tools kde-l10n-Chinese  
 	rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
 	yum install -y java  jenkins && useradd deploy && \
 	sed -i 's:JENKINS_USER="jenkins":JENKINS_USER="deploy":' /etc/sysconfig/jenkins  && \
-	sed -i 's:LANG="en_US.utf8":LANG="zh_CN.utf8"' /etc/locale.conf && \
+	sed -i 's:LANG="en_US.utf8":LANG="zh_CN.utf8":' /etc/locale.conf && \
 	chown -R deploy:deploy /var/lib/jenkins &&  \
 	chown -R deploy:deploy /var/log/jenkins && \
 	chown -R deploy:deploy /var/cache/jenkins
