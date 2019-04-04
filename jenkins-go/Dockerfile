@@ -21,12 +21,13 @@ RUN cd /tmp && wget http://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz &
 	cd /home/deploy/.py3-a2.5-env  && git clone https://github.com/ansible/ansible.git && \
 	cd ansible && git checkout stable-2.5 && source /home/deploy/.py3-a2.5-env/bin/activate && \
 	pip install paramiko PyYAML jinja2 && source /home/deploy/.py3-a2.5-env/ansible/hacking/env-setup -q && \
-	ansible --version"
+	ansible --version && rm -rf /tmp/Python-3.6.5.tar.xz"
 RUN cd /var && mkdir -p /var/www/go/src && mkdir -p /var/www/go/bin && \
 	mkdir -p /var/www/go/pkg && mkdir -p /var/www/gopublic/src && \
 	mkdir -p /var/www/gopublic/bin && mkdir -p /var/www/gopublic/pkg && \
 	wget https://dl.google.com/go/go1.9.2.linux-amd64.tar.gz && \
 	tar -C /usr/local -zxvf  go1.9.2.linux-amd64.tar.gz && \
+	rm -rf /var/go1.9.2.linux-amd64.tar.gz && \
 	echo "export GOROOT=/usr/local/go" >> /etc/profile && \
 	echo "export GOPUBLIC=/var/www/gopublic" >> /etc/profile && \
 	echo "export GOWORKER=/var/www/go" >> /etc/profile && \
