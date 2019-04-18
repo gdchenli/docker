@@ -8,7 +8,8 @@ RUN mkdir -p /var/www && mkdir -p /run
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 COPY ./php/index.php	/var/www
 COPY ./nginx/default.conf /etc/nginx/conf.d
-COPY ./nginx/ginx.conf	/etc/nginx
+COPY ./nginx/nginx.conf	/etc/nginx
 COPY ./init.sh      /var
+EXPOSE 22
 EXPOSE 80
 ENTRYPOINT ["/bin/bash", "/var/init.sh"]
