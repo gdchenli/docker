@@ -21,4 +21,5 @@ COPY conf/init.sh      /var
 EXPOSE 22
 EXPOSE 80
 EXPOSE 443
+EXPOSE 9000
 ENTRYPOINT ["/bin/bash", "/var/init.sh"]
