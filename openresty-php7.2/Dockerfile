@@ -14,9 +14,13 @@ RUN yum -y install openresty && \
     mkdir /var/log/nginx && \
     curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
     ln -s /usr/local/openresty/nginx/conf/conf.d  /root/conf.d  && \
-    ln -s /usr/local/openresty/nginx/sbin/nginx  /usr/local/bin
+    ln -s /usr/local/openresty/nginx/sbin/nginx  /usr/local/bin && \
+    cd /tmp && wget http://xdebug.org/files/xdebug-2.7.1.tgz  && tar zxvf xdebug-2.7.1.tgz && \
+    cd xdebug-2.7.1 && phpize && ./configure && make && make install  && cd /tmp && rm -rf  xdebug-2.7.1.tgz  debug-2.7.1
 COPY conf/nginx/nginx.conf  /usr/local/openresty/nginx/conf
 COPY conf/nginx/default.conf  /usr/local/openresty/nginx/conf/conf.d
+COPY conf/php-fpm/www.conf  /etc/php-fpm.d
+COPY conf/php-extension/xdebug.ini  /etc/php.d/
 COPY conf/init.sh      /var
 EXPOSE 22
 EXPOSE 80
