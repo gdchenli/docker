@@ -1,8 +1,9 @@
 FROM hub.c.163.com/public/centos:7.2-tools
 RUN yum -y install glibc-static telnet bridge-utils net-tools kde-l10n-Chinese  glibc-common \
-    gcc gcc-c++ autoconf pcre pcre-devel make automake wget httpd-tools vim initscripts && \
+    gcc gcc-c++ autoconf pcre pcre-devel make automake wget httpd-tools vim initscripts git && \
     /bin/echo 'root:123456'|chpasswd && \
     localedef -c -f UTF-8 -i zh_CN zh_CN.utf8 && \
+    localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 && \
 	cd /var && mkdir -p /var/www/go/src && mkdir -p /var/www/go/bin && \
 	mkdir -p /var/www/go/pkg && mkdir -p /var/www/gopublic/src && \
 	mkdir -p /var/www/gopublic/bin && mkdir -p /var/www/gopublic/pkg && \
