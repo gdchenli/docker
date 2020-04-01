@@ -16,8 +16,8 @@ RUN yum -y install glibc-static telnet bridge-utils net-tools kde-l10n-Chinese  
 
 #设置环境变量
 ENV GOROOT /usr/local/go
-ENV GOPUBLIC /usr/local/gopublic
-ENV GOWORKER /usr/local/go
+ENV GOPUBLIC /var/www/gopublic
+ENV GOWORKER /var/www/go
 ENV GOPATH $GOPUBLIC:$GOWORKER
 ENV PATH $PATH:$GOROOT/bin:$GOPUBLIC/bin:$GOWORKER\bin
 
