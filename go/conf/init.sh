@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/sbin/sshd -D
+/usr/local/openresty/nginx/sbin/nginx -p /usr/local/openresty/nginx/  -g 'daemon off;' #启动nginx
