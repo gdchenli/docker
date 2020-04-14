@@ -1,4 +1,4 @@
-FROM gdchenli/openresty:1.0.0
+FROM gdchenli/openresty:1.15.8.1
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum -y install php56w php56w-devel php56w-gd.x86_64 \

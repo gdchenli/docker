@@ -1,4 +1,4 @@
-FROM gdchenli/openresty:1.0.0
+FROM gdchenli/openresty:1.15.8.1
 RUN cd /var && mkdir -p /var/www/go/src && mkdir -p /var/www/go/bin && \
 	mkdir -p /var/www/go/pkg && mkdir -p /var/www/gopublic/src && \
 	mkdir -p /var/www/gopublic/bin && mkdir -p /var/www/gopublic/pkg && \
