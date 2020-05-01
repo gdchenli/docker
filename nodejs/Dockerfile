@@ -9,6 +9,7 @@ ENV PATH $PATH:/usr/local/node/bin
 
 EXPOSE 80
 EXPOSE 443
+EXPOSE 5000
 
 COPY conf/init.sh	/var
 ENTRYPOINT ["/bin/bash", "/var/init.sh"]
