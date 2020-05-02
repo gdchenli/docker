@@ -1,5 +1,5 @@
 ### docker image
-openresty 15.8.1
+openresty 15.8.1  
 基于openresty 15.8.1 搭建镜像
 - php 5.6
 - go 1.9.2
